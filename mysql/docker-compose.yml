@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      # Removed MYSQL_USER: root and MYSQL_PASSWORD: root
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - mysql_network
+
+volumes:
+  mysql_data:
+    name: mysql_persistent_data
+    
+networks:
+  mysql_network:
+    driver: bridge
