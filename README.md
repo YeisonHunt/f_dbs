@@ -15,6 +15,10 @@ chmod +x posg15/pos.sh
 
 Run the script pos.sh with the vpn activated
 
+OR ---
+
+use pg dump and pg restore with dbveaer (not confirmed)
+
 ### SQL Server
 
 Install sqlcmd on ubuntu with the script or in mac with the command
